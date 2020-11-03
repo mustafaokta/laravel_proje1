@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Kategori;
 use App\Models\Urun;
 use App\Models\UrunDetay;
 use Illuminate\Database\Seeder;
@@ -25,6 +26,7 @@ class UrunTableSeeder extends Seeder
                 'slug'     => str_slug($urun_adi),
                 'aciklama' => $faker->paragraph(20),
                 'fiyati'   => $faker->randomFloat(3, 1, 20)
+
             ]);
             
             $detay = $urun->detay()->create([
@@ -32,7 +34,8 @@ class UrunTableSeeder extends Seeder
                 'goster_gunun_firsati'=>rand(0,1),
                 'goster_one_cikan'=>rand(0,1),
                 'goster_cok_satan'=>rand(0,1),
-                'goster_indirimli'=>rand(0,1)
+                'goster_indirimli'=>rand(0,1),
+                'urun_resmi'=> $faker->randomFloat(3, 1, 20)
             ]);
         }
     

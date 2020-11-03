@@ -47,9 +47,9 @@ class AppServiceProvider extends ServiceProvider
             $view->with('istatistikler', $istatistikler);
         });
         
-        foreach(Ayar::all() as $ayar) {
+       /* foreach(Ayar::all() as $ayar) {
             Config::set('ayar.' . $ayar->anahtar, $ayar->deger);
-        }
+        } */
     }
 
     /**
